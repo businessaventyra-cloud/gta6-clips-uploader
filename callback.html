@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authorization complete – GTA6 Clips Uploader</title><link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+<h1>Authorization complete</h1>
+<p>You can close this page. The operator of GTA6 Clips Uploader copies the authorization code below into the local tool.</p>
+<pre id="out"></pre>
+<script>
+var p = new URLSearchParams(location.search);
+document.getElementById('out').textContent = p.get('code') ? 'code: ' + p.get('code') : (p.get('error') ? 'error: ' + p.get('error') : 'No authorization data.');
+</script>
+</body></html>
