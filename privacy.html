@@ -12,6 +12,9 @@ It is not offered to the public and has no user accounts.</p>
 <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>, and Google's handling of data is
 described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
+<h2>TikTok API</h2>
+<p>The tool also uses TikTok for Developers (Login Kit and Content Posting API) to upload videos to TikTok accounts owned by the operator. It requests the scopes <code>user.info.basic</code> and <code>video.upload</code> (and <code>video.publish</code> if direct posting is approved). It uploads the finished video file and its caption to the account that granted access, and reads only the basic profile information needed to identify that account.</p>
+<p>The tool does not collect, store or share data about any other TikTok user. TikTok access and refresh tokens are kept in local files on the operator's computer and are used only to call TikTok APIs. Access can be removed at any time in TikTok under Settings and privacy, Security, Apps and services.</p>
 <h2>What the tool accesses</h2>
 <p>The tool requests one OAuth 2.0 scope: <code>https://www.googleapis.com/auth/youtube.upload</code>.
 With it, the tool can upload videos (file, title, description, category, privacy status) to the YouTube

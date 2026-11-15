@@ -5,14 +5,14 @@
 <h1>GTA6 Clips Uploader</h1>
 <p>GTA6 Clips Uploader is a private, single-operator tool. It builds short "Top 5" gaming compilations
 from Twitch clips, with on-screen credit to every streamer, and uploads the finished videos to the
-operator's own YouTube channels.</p>
+operator's own YouTube and TikTok accounts.</p>
 <h2>How it works</h2>
 <ol>
 <li>The tool reads the most viewed recent clips of one game from the official Twitch API.</li>
 <li>It renders a vertical 9:16 countdown video (#5 to #1) on the operator's computer. Each segment shows the
 clip title and the streamer's channel name; the description lists every source channel.</li>
 <li>It uploads the video to one of the operator's own YouTube channels through YouTube API Services
-(<code>videos.insert</code>), at most a few videos per channel per day.</li>
+(<code>videos.insert</code>) or to the operator's own TikTok account through the TikTok Content Posting API, at most a few videos per account per day.</li>
 </ol>
 <h2>Who can use it</h2>
 <p>The tool is not offered to the public. It runs only on the operator's computer and is authorized only
