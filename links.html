@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTA 6 Top Clips - all channels</title>
+<meta name="description" content="Daily Top 5 GTA 6 clips from Twitch. YouTube Shorts, TikTok, Instagram, Telegram. Every streamer credited.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font:16px/1.4 system-ui,Segoe UI,Roboto,sans-serif;color:#fff;
+background:linear-gradient(180deg,#140a3c 0%,#9a2aa8 55%,#ff6aa8 100%) fixed;padding:28px 16px 60px}
+main{max-width:560px;margin:0 auto}
+h1{font-size:28px;margin:0 0 4px;text-align:center;letter-spacing:.5px}
+.sub{text-align:center;opacity:.85;margin:0 0 22px}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:#ffe45e;margin:26px 0 8px}
+a.b{display:flex;align-items:center;gap:12px;padding:14px 16px;margin:8px 0;border-radius:14px;
+background:rgba(10,5,30,.62);border:1px solid rgba(255,255,255,.25);color:#fff;text-decoration:none;font-weight:600}
+a.b:hover{background:rgba(10,5,30,.85);border-color:#ffe45e}
+a.b small{display:block;font-weight:400;opacity:.75}
+a.f{background:linear-gradient(90deg,#ff3ca0,#ff8a00);border:0;font-size:18px}
+.i{width:34px;height:34px;border-radius:50%;background:#fff3;display:grid;place-items:center;font-size:18px}
+footer{margin-top:30px;text-align:center;font-size:13px;opacity:.75}
+</style>
+</head>
+<body>
+<main>
+<h1>GTA 6 TOP CLIPS</h1>
+<p class="sub">Daily Top 5 from Twitch · Щоденний Топ 5 · every streamer credited</p>
+
+<h2>Featured / Головне</h2>
+<div id="featured"></div>
+
+<h2>Short video</h2>
+<div id="short"></div>
+
+<h2>Telegram EN</h2>
+<div id="tgen"></div>
+
+<h2>Telegram UA</h2>
+<div id="tgua"></div>
+
+<footer>Clips belong to their streamers on Twitch and are credited in every video.</footer>
+</main>
+<script>
+/* To promote other channels: change the "featured" ids below. Nothing else needs editing. */
+var FEATURED = ["tg_ua", "tg_top", "yt_top"];
+
+var ALL = {
+  yt_top:   {g:"short", i:"▶", t:"YouTube Shorts — Top Clips", d:"Best of the day", u:"https://www.youtube.com/@GTA6TopClipsDaily"},
+  yt_bugs:  {g:"short", i:"▶", t:"YouTube — Bugs & Glitches", d:"", u:"https://www.youtube.com/@GTA6BugsDaily"},
+  yt_funny: {g:"short", i:"▶", t:"YouTube — Funny Moments", d:"", u:"https://www.youtube.com/@GTA6FunnyMomentsDaily-q3i"},
+  yt_chase: {g:"short", i:"▶", t:"YouTube — Police Chases", d:"", u:"https://www.youtube.com/@GTA6PoliceChases-h5u"},
+  yt_stunt: {g:"short", i:"▶", t:"YouTube — Stunts & Crashes", d:"", u:"https://www.youtube.com/@GTA6StuntsCrashes"},
+  tt:       {g:"short", i:"♪", t:"TikTok", d:"@riferss", u:"https://www.tiktok.com/@riferss"},
+  ig:       {g:"short", i:"◎", t:"Instagram", d:"@the_lowkey_rich", u:"https://www.instagram.com/the_lowkey_rich/"},
+  tg_top:   {g:"tgen", i:"✈", t:"Telegram — Top Clips Daily", d:"English", u:"https://t.me/gta6_top_clips_daily"},
+  tg_bugs:  {g:"tgen", i:"✈", t:"Telegram — Bugs Daily", d:"English", u:"https://t.me/gta6_bugs_daily"},
+  tg_funny: {g:"tgen", i:"✈", t:"Telegram — Funny Moments", d:"English", u:"https://t.me/gta6_funny_moments_daily"},
+  tg_chase: {g:"tgen", i:"✈", t:"Telegram — Police Chases", d:"English", u:"https://t.me/gta6_police_chases"},
+  tg_stunt: {g:"tgen", i:"✈", t:"Telegram — Stunts & Crashes", d:"English", u:"https://t.me/gta6_stunts_crashes"},
+  tg_ua:    {g:"tgua", i:"✈", t:"Telegram — GTA 6 Топ Кліпів Щодня", d:"Українською", u:"https://t.me/gta6_top_clips_ua"}
+};
+
+function btn(k, feat) {
+  var o = ALL[k];
+  return '<a class="b' + (feat ? ' f' : '') + '" href="' + o.u + '" rel="noopener" target="_blank"><span class="i">' + o.i +
+    '</span><span>' + o.t + (o.d ? '<small>' + o.d + '</small>' : '') + '</span></a>';
+}
+function fill(id, keys, feat) { document.getElementById(id).innerHTML = keys.map(function (k) { return btn(k, feat); }).join(""); }
+fill("featured", FEATURED, true);
+["short", "tgen", "tgua"].forEach(function (g) {
+  fill(g, Object.keys(ALL).filter(function (k) { return ALL[k].g === g; }), false);
+});
+</script>
+</body>
+</html>
